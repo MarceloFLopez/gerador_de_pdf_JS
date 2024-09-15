@@ -9,96 +9,158 @@
     <!-- Seu CSS personalizado -->
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* CSS customizado para ajustar a largura dos campos e centralizar o formulário */
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
+        /* Layout geral */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
         }
-        .form-control, .form-select {
-            font-size: 0.875rem; /* Ajusta o tamanho da fonte dos campos */
+        .form-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-header {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .form-header h1 {
+            font-size: 1.125rem;
+            color: #343a40;
+            font-weight: 600;
+        }
+        .form-section {
+            margin-bottom: 8px;
         }
         .form-label {
-            font-size: 0.875rem; /* Ajusta o tamanho da fonte dos labels */
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #495057;
         }
-        .btn {
-            font-size: 0.875rem; /* Ajusta o tamanho da fonte do botão */
+        .form-control, .form-select {
+            border-radius: 6px;
+            font-size: 0.75rem;
+            padding: 4px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 80px;
+            font-size: 0.8rem;
+            font-weight: 800; /* Aumenta a espessura da fonte */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-4">
+    <div class="container">
         <div class="form-container">
-            <h1 class="mb-4 text-center">Gerar Receita Médica</h1>
+            <div class="form-header">
+                <h1>Gerar Receita Médica</h1>
+            </div>
             <form id="clinic-form">
-                <!-- Seção Clínica -->
-                <div class="mb-3">
-                    <label for="clinic-select" class="form-label">Selecione a Clínica:</label>
-                    <select id="clinic-select" class="form-select">
-                        <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="clinic-name" class="form-label">Nome da Clínica:</label>
-                    <input type="text" id="clinic-name" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="clinic-address" class="form-label">Endereço:</label>
-                    <input type="text" id="clinic-address" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="clinic-phone" class="form-label">Telefone:</label>
-                    <input type="text" id="clinic-phone" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="clinic-cep" class="form-label">CEP:</label>
-                    <input type="text" id="clinic-cep" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="clinic-uf" class="form-label">UF:</label>
-                    <input type="text" id="clinic-uf" class="form-control" readonly>
+                <div class="row">
+                    <!-- Coluna 1: Clínica -->
+                    <div class="col-md-4">
+                        <div class="form-section">
+                            <h3 class="form-label">Informações da Clínica</h3>
+                            <div class="mb-2">
+                                <label for="clinic-select" class="form-label">Selecione a Clínica:</label>
+                                <select id="clinic-select" class="form-select">
+                                    <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="clinic-name" class="form-label">Nome da Clínica:</label>
+                                <input type="text" id="clinic-name" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="clinic-address" class="form-label">Endereço:</label>
+                                <input type="text" id="clinic-address" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="clinic-phone" class="form-label">Telefone:</label>
+                                <input type="text" id="clinic-phone" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="clinic-cep" class="form-label">CEP:</label>
+                                <input type="text" id="clinic-cep" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="clinic-uf" class="form-label">UF:</label>
+                                <input type="text" id="clinic-uf" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 2: Paciente -->
+                    <div class="col-md-4">
+                        <div class="form-section">
+                            <h3 class="form-label">Informações do Paciente</h3>
+                            <div class="mb-2">
+                                <label for="patient-select" class="form-label">Selecione o Paciente:</label>
+                                <select id="patient-select" class="form-select">
+                                    <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="patient-name" class="form-label">Nome do Paciente:</label>
+                                <input type="text" id="patient-name" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="patient-age" class="form-label">Idade:</label>
+                                <input type="text" id="patient-age" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="patient-address" class="form-label">Endereço:</label>
+                                <input type="text" id="patient-address" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="patient-number" class="form-label">Número:</label>
+                                <input type="text" id="patient-number" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna 3: Medicamento -->
+                    <div class="col-md-4">
+                        <div class="form-section">
+                            <h3 class="form-label">Informações do Medicamento</h3>
+                            <div class="mb-2">
+                                <label for="medicament-select" class="form-label">Selecione o Medicamento:</label>
+                                <select id="medicament-select" class="form-select">
+                                    <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="medicament-name" class="form-label">Nome do Medicamento:</label>
+                                <input type="text" id="medicament-name" class="form-control" readonly>
+                            </div>
+                            <div class="mb-2">
+                                <label for="medicament-posology" class="form-label">Posologia:</label>
+                                <input type="text" id="medicament-posology" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <!-- Seção Paciente -->
-                <div class="mb-3">
-                    <label for="patient-select" class="form-label">Selecione o Paciente:</label>
-                    <select id="patient-select" class="form-select">
-                        <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
-                    </select>
+                <div class="btn-container">
+                    <button type="button" class="btn btn-primary" onclick="generatePDF()">GERAR PDF</button>
                 </div>
-                <div class="mb-3">
-                    <label for="patient-name" class="form-label">Nome do Paciente:</label>
-                    <input type="text" id="patient-name" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="patient-age" class="form-label">Idade:</label>
-                    <input type="text" id="patient-age" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="patient-address" class="form-label">Endereço:</label>
-                    <input type="text" id="patient-address" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="patient-number" class="form-label">Número:</label>
-                    <input type="text" id="patient-number" class="form-control" readonly>
-                </div>
-                
-                <!-- Seção Medicamento -->
-                <div class="mb-3">
-                    <label for="medicament-select" class="form-label">Selecione o Medicamento:</label>
-                    <select id="medicament-select" class="form-select">
-                        <!-- Opções serão adicionadas dinamicamente pelo JavaScript -->
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="medicament-name" class="form-label">Nome do Medicamento:</label>
-                    <input type="text" id="medicament-name" class="form-control" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="medicament-posology" class="form-label">Posologia:</label>
-                    <input type="text" id="medicament-posology" class="form-control" readonly>
-                </div>
-                
-                <button type="button" class="btn btn-primary w-100" onclick="generatePDF()">Gerar PDF</button>
             </form>
         </div>
     </div>
