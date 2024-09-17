@@ -405,8 +405,8 @@ patients.forEach((patient, index) => {
     addFooter(doc, 1);
 
 
-     // Salva o PDF com o nome "relatorio.pdf"
-    doc.save('relatório.pdf');
+    // Salva o PDF
+    doc.save('Relatório.pdf');
 
     };
 });
