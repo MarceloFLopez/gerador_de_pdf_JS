@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: "Bactrin F 20cps ", posology: "Tomar 1cp a cada 12 horas durante 7 dias" },
         { name: "Bactrin suspens ", posology: "Tomar 5ml a cada 12 horas durante 7 dias" },
         { name: "Bactroban 20mg/g pom 10g", posology: "Passar no local 4 vezes por dia durante 7 dias" },
+	            { name: "Benzetacil 4ml", posology: "Aplicar IM dose unica" },
         { name: "Bactrin F suspens ", posology: "Tomar 5ml a cada 12 horas durante 7 dias" },
         { name: "Cefalexina 500mg 28cps ", posology: "Tomar 1cp a cada 6 horas durante 7 dias" },
         { name: "Cefalexina 200mg/5ml 15ml", posology: "Tomar 5ml a cada 8 horas durante 7 dias" },	
