@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const patients = [
 { name: "Paulo Palhares", age: 8, address: "Avenida Hélio Pellegrino", number: 616 },
+{ name: "Adriana Deniz Brito", age: 41, address: "Rua Oregon", number: 167 },
 { name: "Icaro Levi Bandeira do Nascimento", age: 2, address: "Rua Genebra", number: 149 },
 { name: "Conegundes Esteves Nascimento Neto", age: 24, address: "Rua Genebra", number: 149 },
 { name: "Alessandro Tavares", age: 8, address: "Viela das Pedras", number: 686 },
